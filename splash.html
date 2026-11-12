@@ -65,10 +65,14 @@
     <path d="M335 305 A360 360 0 0 1 668 262" fill="none" stroke="#fff" stroke-width="0"/>
     <!-- faixa "ORDEM E PROGRESSO" -->
     <g clip-path="url(#globe)">
-      <path id="band" d="M330 430 A300 300 0 0 1 690 300" fill="none"/>
-      <path d="M325 432 A300 300 0 0 1 695 300 L690 332 A268 268 0 0 0 340 455 Z" fill="#fff"/>
-      <text font-size="26" font-family="Arial, sans-serif" font-weight="bold" fill="#009b3a" letter-spacing="3">
-        <textPath href="#band" startOffset="7%">ORDEM E PROGRESSO</textPath>
+      <!-- linha central da faixa -->
+      <path id="band" d="M338 452 A300 300 0 0 1 662 388" fill="none"/>
+      <!-- faixa branca (traço grosso sobre a linha central) -->
+      <use href="#band" stroke="#fff" stroke-width="34" fill="none"/>
+      <!-- texto centralizado dentro da faixa -->
+      <text font-size="21" font-family="Arial, sans-serif" font-weight="bold"
+            fill="#009b3a" letter-spacing="2" text-anchor="middle" dy="7">
+        <textPath href="#band" startOffset="50%">ORDEM E PROGRESSO</textPath>
       </text>
     </g>
     <!-- estrelas -->
