@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>CNH do Brasil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <style>
+    :root { --bg: #1c1c1e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .flag {
+      width: 190px;
+      height: 133px;        /* proporção oficial 10:7 */
+      border-radius: 4px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.4);
+      display: block;
+    }
+
+    .logo {
+      margin-top: 34px;
+      text-align: center;
+      line-height: .9;
+      user-select: none;
+    }
+    .logo .top {
+      font-size: 68px;
+      font-weight: 300;      /* "CNH do" fino */
+      letter-spacing: 1px;
+    }
+    .logo .bottom {
+      font-size: 78px;
+      font-weight: 800;      /* "BRASIL" grosso */
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 400px) {
+      .flag { width: 160px; height: 112px; }
+      .logo .top { font-size: 56px; }
+      .logo .bottom { font-size: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bandeira do Brasil (SVG, sem dependência externa) -->
+  <svg class="flag" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandeira do Brasil">
+    <rect width="1000" height="700" fill="#009b3a"/>
+    <path d="M500 70 930 350 500 630 70 350z" fill="#fedf00"/>
+    <circle cx="500" cy="350" r="175" fill="#002776"/>
+    <clipPath id="globe"><circle cx="500" cy="350" r="175"/></clipPath>
+    <path d="M335 305 A360 360 0 0 1 668 262" fill="none" stroke="#fff" stroke-width="0"/>
+    <!-- faixa "ORDEM E PROGRESSO" -->
+    <g clip-path="url(#globe)">
+      <path id="band" d="M330 430 A300 300 0 0 1 690 300" fill="none"/>
+      <path d="M325 432 A300 300 0 0 1 695 300 L690 332 A268 268 0 0 0 340 455 Z" fill="#fff"/>
+      <text font-size="26" font-family="Arial, sans-serif" font-weight="bold" fill="#009b3a" letter-spacing="3">
+        <textPath href="#band" startOffset="7%">ORDEM E PROGRESSO</textPath>
+      </text>
+    </g>
+    <!-- estrelas -->
+    <g fill="#fff" clip-path="url(#globe)">
+      <circle cx="420" cy="430" r="6"/>
+      <circle cx="460" cy="455" r="4"/>
+      <circle cx="500" cy="440" r="7"/>
+      <circle cx="540" cy="460" r="5"/>
+      <circle cx="580" cy="435" r="4"/>
+      <circle cx="620" cy="410" r="6"/>
+      <circle cx="470" cy="400" r="4"/>
+      <circle cx="505" cy="405" r="5"/>
+      <circle cx="550" cy="410" r="4"/>
+      <circle cx="430" cy="370" r="5"/>
+      <circle cx="500" cy="300" r="6"/>
+      <circle cx="560" cy="330" r="4"/>
+    </g>
+  </svg>
+
+  <div class="logo">
+    <div class="top">CNH do</div>
+    <div class="bottom">BRASIL</div>
+  </div>
+
+</body>
+</html>
