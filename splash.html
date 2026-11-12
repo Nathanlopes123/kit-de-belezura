@@ -62,33 +62,40 @@
     <path d="M500 70 930 350 500 630 70 350z" fill="#fedf00"/>
     <circle cx="500" cy="350" r="175" fill="#002776"/>
     <clipPath id="globe"><circle cx="500" cy="350" r="175"/></clipPath>
-    <path d="M335 305 A360 360 0 0 1 668 262" fill="none" stroke="#fff" stroke-width="0"/>
-    <!-- faixa "ORDEM E PROGRESSO" -->
+
     <g clip-path="url(#globe)">
-      <!-- linha central da faixa -->
-      <path id="band" d="M338 452 A300 300 0 0 1 662 388" fill="none"/>
-      <!-- faixa branca (traço grosso sobre a linha central) -->
-      <use href="#band" stroke="#fff" stroke-width="34" fill="none"/>
-      <!-- texto centralizado dentro da faixa -->
-      <text font-size="21" font-family="Arial, sans-serif" font-weight="bold"
-            fill="#009b3a" letter-spacing="2" text-anchor="middle" dy="7">
+      <!-- faixa branca diagonal atravessando o círculo inteiro (descendo esq->dir) -->
+      <path id="band" d="M318 330 A 350 350 0 0 1 688 392" fill="none"/>
+      <use href="#band" stroke="#fff" stroke-width="30"/>
+      <text font-size="25" font-family="Arial, sans-serif" font-weight="bold"
+            fill="#009b3a" letter-spacing="5" text-anchor="middle" dy="9">
         <textPath href="#band" startOffset="50%">ORDEM E PROGRESSO</textPath>
       </text>
-    </g>
-    <!-- estrelas -->
-    <g fill="#fff" clip-path="url(#globe)">
-      <circle cx="420" cy="430" r="6"/>
-      <circle cx="460" cy="455" r="4"/>
-      <circle cx="500" cy="440" r="7"/>
-      <circle cx="540" cy="460" r="5"/>
-      <circle cx="580" cy="435" r="4"/>
-      <circle cx="620" cy="410" r="6"/>
-      <circle cx="470" cy="400" r="4"/>
-      <circle cx="505" cy="405" r="5"/>
-      <circle cx="550" cy="410" r="4"/>
-      <circle cx="430" cy="370" r="5"/>
-      <circle cx="500" cy="300" r="6"/>
-      <circle cx="560" cy="330" r="4"/>
+
+      <!-- estrelas (brancas) -->
+      <g fill="#fff">
+        <polygon points="0,-7 1.6,-2.2 6.7,-2.2 2.5,1 4,5.9 0,3 -4,5.9 -2.5,1 -6.7,-2.2 -1.6,-2.2" transform="translate(585,300) scale(1)"/>
+        <circle cx="500" cy="285" r="5"/>
+        <circle cx="408" cy="372" r="6"/>
+        <circle cx="372" cy="398" r="4"/>
+        <circle cx="430" cy="410" r="5"/>
+        <circle cx="470" cy="418" r="4"/>
+        <circle cx="398" cy="435" r="6"/>
+        <circle cx="445" cy="448" r="4"/>
+        <circle cx="510" cy="400" r="7"/>
+        <circle cx="548" cy="392" r="4"/>
+        <circle cx="505" cy="455" r="6"/>
+        <circle cx="478" cy="478" r="4"/>
+        <circle cx="560" cy="440" r="5"/>
+        <circle cx="600" cy="420" r="6"/>
+        <circle cx="635" cy="398" r="4"/>
+        <circle cx="612" cy="455" r="4"/>
+        <circle cx="575" cy="478" r="5"/>
+        <circle cx="528" cy="500" r="4"/>
+        <circle cx="500" cy="340" r="4"/>
+        <circle cx="455" cy="330" r="4"/>
+        <circle cx="540" cy="345" r="3"/>
+      </g>
     </g>
   </svg>
 
